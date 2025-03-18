@@ -8,7 +8,7 @@ function fetchUsers() {
             const users = response.data;
             let outputHTML = "<ul>";
             users.forEach(user => {
-                outputHTML += `<li><strong>${user.name}</strong> - ${user.email} (Group: ${user.group})</li>`;
+                outputHTML += `<li><strong>${user.id}</strong> - ${user.email} (Group: ${user.group})</li>`;
             });
             outputHTML += "</ul>";
             document.getElementById("output").innerHTML = outputHTML;
