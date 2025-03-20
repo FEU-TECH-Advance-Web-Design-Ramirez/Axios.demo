@@ -34,7 +34,7 @@ document.getElementById("userForm").addEventListener("submit", function (event) 
             document.getElementById("userForm").reset(); // Clear the form
         })
         .catch(error => {
-            alert("Error adding user");
+            alert(error.data.error);
             console.error("Error:", error.data.error);
         });
 });
