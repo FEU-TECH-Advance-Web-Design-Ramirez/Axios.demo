@@ -27,7 +27,7 @@ document.getElementById("userForm").addEventListener("submit", function (event) 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    axios.post(API_URL, { name, email, password})
+    axios.post(API_URL, { name, email, password })
         .then(response => {
             alert("User added successfully!");
             fetchUsers(); // Refresh the users list
@@ -35,6 +35,6 @@ document.getElementById("userForm").addEventListener("submit", function (event) 
         })
         .catch(error => {
             alert("Error adding user");
-            console.error("Error:", error);
+            console.error("Error:", error.data.error);
         });
 });
