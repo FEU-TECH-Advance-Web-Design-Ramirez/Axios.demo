@@ -54,8 +54,14 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     axios.get(API_URL+email)
         .then((res) => {
             alert("Login Success");
+            localStorage.setItem("userId")
         })
         .catch((err) => {
             alert("Failed to login")
         })
+})
+
+document.getElementById("logout").addEventListener("keypress", function (params) {
+    alert("Logout user: " + localStorage.getItem("userId"));
+    localStorage.clear("userId");
 })
